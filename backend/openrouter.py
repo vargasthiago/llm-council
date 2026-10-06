@@ -2,7 +2,7 @@
 
 import httpx
 from typing import List, Dict, Any, Optional
-from .config import OPENROUTER_API_KEY, OPENROUTER_API_URL
+from .config import OPENROUTER_API_KEY, OPENROUTER_API_URL, MAX_TOKENS
 
 
 async def query_model(
@@ -29,6 +29,7 @@ async def query_model(
     payload = {
         "model": model,
         "messages": messages,
+        "max_tokens": MAX_TOKENS,
     }
 
     try:
